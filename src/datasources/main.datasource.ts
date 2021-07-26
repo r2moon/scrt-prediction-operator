@@ -9,7 +9,7 @@ const config = {
   port: 5432,
   user: 'admin',
   password: 'admin',
-  database: 'prediction'
+  database: 'prediction',
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -17,8 +17,10 @@ const config = {
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
-export class MainDataSource extends juggler.DataSource
-  implements LifeCycleObserver {
+export class MainDataSource
+  extends juggler.DataSource
+  implements LifeCycleObserver
+{
   static dataSourceName = 'main';
   static readonly defaultConfig = config;
 

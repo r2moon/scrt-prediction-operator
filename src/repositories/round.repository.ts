@@ -8,9 +8,7 @@ export class RoundRepository extends DefaultCrudRepository<
   typeof Round.prototype.id,
   RoundRelations
 > {
-  constructor(
-    @inject('datasources.main') dataSource: MainDataSource,
-  ) {
+  constructor(@inject('datasources.main') dataSource: MainDataSource) {
     super(Round, dataSource);
   }
 }

@@ -79,7 +79,6 @@ export class Round extends Entity {
   })
   status: string;
 
-
   constructor(data?: Partial<Round>) {
     super(data);
   }

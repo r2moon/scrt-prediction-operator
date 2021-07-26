@@ -1,4 +1,4 @@
-import {injectable, /* inject, */ BindingScope} from '@loopback/core';
+import {/* inject, */ BindingScope, injectable} from '@loopback/core';
 
 @injectable({scope: BindingScope.TRANSIENT})
 export class MainService {
