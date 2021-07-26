@@ -1,16 +1,17 @@
 import {Entity, model, property} from '@loopback/repository';
 
+export enum RoundStatus {
+  STARTED = 'STARTED',
+  LOCKED = 'LOCKED',
+  ENDED = 'ENDED',
+  EXECUTING = 'EXECUTING',
+}
+
 @model()
 export class Round extends Entity {
   @property({
     type: 'number',
     id: true,
-    generated: true,
-  })
-  id?: number;
-
-  @property({
-    type: 'number',
     required: true,
   })
   epoch: number;
@@ -77,7 +78,12 @@ export class Round extends Entity {
     type: 'string',
     required: true,
   })
-  status: string;
+  status: RoundStatus;
+
+  @property({
+    type: 'string',
+  })
+  executeTx?: string;
 
   constructor(data?: Partial<Round>) {
     super(data);

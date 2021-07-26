@@ -12,12 +12,12 @@ export class MainCronJobService extends CronJob {
       name: 'main-cronjob',
       onTick: async () => {
         try {
-          // await this.transactionService.requestDailyAnalyticsInfo();
+          await this.mainService.checkRound();
         } catch (err) {
           console.error(err);
         }
       },
-      cronTime: '0 1 0 */1 * *',
+      cronTime: '*/10 * * * * *',
       start: true,
     });
   }

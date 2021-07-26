@@ -5,7 +5,7 @@ import {Round, RoundRelations} from '../models';
 
 export class RoundRepository extends DefaultCrudRepository<
   Round,
-  typeof Round.prototype.id,
+  typeof Round.prototype.epoch,
   RoundRelations
 > {
   constructor(@inject('datasources.main') dataSource: MainDataSource) {
